@@ -1,0 +1,415 @@
+/* Modern Design System */
+:root {
+    --bg-primary: #1a1f25;
+    --bg-secondary: #242b33;
+    --accent-primary: #64ffda;
+    --accent-secondary: #88e1ff;
+    --text-primary: #e6f1ff;
+    --text-secondary: #8892b0;
+    --gradient-primary: linear-gradient(120deg, #1a1f25 0%, #242b33 100%);
+    --gradient-accent: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    --shadow-soft: 0 8px 32px rgba(100, 255, 218, 0.08);
+    --shadow-strong: 0 12px 40px rgba(100, 255, 218, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header Styles */
+header {
+    background: rgba(26, 31, 37, 0.95);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.snake-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.4));
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--gradient-accent);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(100, 255, 218, 0.1) 0%, transparent 50%);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero .highlight {
+    color: var(--accent-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.hero .highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    bottom: 0.2rem;
+    left: 0;
+    background: var(--accent-primary);
+    opacity: 0.3;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+/* Button Styles */
+.btn {
+    background: transparent;
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Section Styles */
+section {
+    padding: 6rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-accent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* About, Projects, Contact Styles */
+.about, .projects, .contact {
+    background: rgba(44, 83, 100, 0.13);
+    border-radius: 18px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px rgba(44,83,100,0.08);
+    padding: 2.5rem 2rem;
+}
+
+.about h2, .projects h2, .contact h2 {
+    color: #7fffd4;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Contact Info Styles */
+.contact-info {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-info strong {
+    color: var(--accent-primary);
+}
+
+/* Styling for links in the contact section */
+.contact-info a {
+    color: #00ffcc; /* Aqua color for better readability */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+/* Project Cards */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--accent-primary);
+}
+
+.project-card h3 {
+    color: var(--accent-primary);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Contact Form */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.1);
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+footer p {
+    color: var(--text-secondary);
+}
+
+/* Modal styles for Snake Game */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(15,32,39,0.85);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #232526;
+    margin: 5% auto;
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 8px 32px rgba(44, 83, 100, 0.22);
+    position: relative;
+    text-align: center;
+}
+.close {
+    color: #7fffd4;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close:hover {
+    color: #fff;
+}
+#snakeCanvas {
+    background: #0f2027;
+    border: 2px solid #7fffd4;
+    border-radius: 10px;
+    margin: 1rem 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.snake-controls {
+    margin-top: 1rem;
+    color: #e6f2e9;
+}
+.snake-controls .btn {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+@media (max-width: 900px) {
+    .project-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .about, .projects, .contact {
+        padding: 1.5rem 1rem;
+    }
+}
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .about h2, .projects h2, .contact h2 {
+        font-size: 1.3rem;
+    }
+    .modal-content {
+        padding: 1rem 0.5rem;
+    }
+    #snakeCanvas {
+        width: 90vw !important;
+        height: 90vw !important;
+        max-width: 350px;
+        max-height: 350px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero > div,
+.project-card,
+.about,
+.contact {
+    animation: fadeIn 0.8s ease-out forwards;
+}

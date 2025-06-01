@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="snake-icon">🐍</span> My Portfolio
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Hello, I'm <span class="highlight">Thepkaysone Thanouxay</span></h1>
+            <p class="subtitle">A passionate developer born in the year of the Snake 🐍</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet dictum, massa erat cursus enim, nec dictum urna elit nec urna.</p>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <div>
+                        <h3>Serpent Sprint</h3>
+                        <p>A classic snake game built with JavaScript. Play and try to beat your high score!</p>
+                    </div>
+                    <a href="snake.html" class="btn">Play Snake</a>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <h3>Tetris Stack</h3>
+                        <p>A classic Tetris game built with JavaScript. Stack the blocks and try to beat your high score!</p>
+                    </div>
+                    <a href="tetris.html" class="btn">Play Tetris</a>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <h3>Project Three</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:example@domain.com">example@domain.com</a></p>
+                <p><strong>Address:</strong> <a href="https://www.google.com/maps/">123 Snake Street, Python City, CodeLand</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            </div>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Thepkaysone Thanouxay. Born in the year of the Snake 🐍</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
